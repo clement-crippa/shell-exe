@@ -14,12 +14,8 @@ done <"$MY_INPUT"
 
 for index in "${!A_FIRSTNAME[@]}"; do
    sudo  useradd -d "/home/${A_FIRSTNAME[$index]}" -s /bin/bash -u "${A_ID[$index]}" -p "$(echo "${A_PASSWORD[$index]}" | openssl passwd -1 -stdin)" --badname "${A_FIRSTNAME[$index]}""${A_LASTNAME[$index]}"
-
 if [ "${A_ROLE[$index]}" == Admin ]
 then
-
  sudo usermod -aG sudo "${A_FIRSTNAME[$index]}""${A_LASTNAME[$index]}"
-
 fi
-
 done
