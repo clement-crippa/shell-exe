@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ALCASAR - </title>
+		<link rel="stylesheet" type="text/css" href="/css/error.css">
+		<script type="text/javascript" src="/js/i18n.js"></script>
+		<script type="text/javascript" src="/js/error_translate.js"></script>
+	</head>
+	<body>
+		<div id="cadre_titre" class="titre_refus">
+			<p id="acces_controle" class="titre_refus"></p>
+			<div id="boite_logo"><img src="/images/organisme.png"></div>
+		</div>
+
+		<div id="contenu_error"></div>
+		<script type="text/javascript">setErrorMessage(getErrorTranslation(400))</script>
+	</body>
+</html>

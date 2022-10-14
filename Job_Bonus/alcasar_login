@@ -1,1 +1,5 @@
-curl -u username:password https://alcasar.laplateforme.io/intercept.php
+challenge=$(curl -L --request GET https://alcasar.laplateforme.io/intercept.php 2>&1 | grep -oP 'name="challenge" value="\K.*?(?=")')
+userurl=$(curl -L --request GET https://alcasar.laplateforme.io/intercept.php 2>&1 | grep -oP 'name="userurl" value="\K.*?(?=")')
+username=$1
+password=$2
+curl -L --request POST --url https://alcasar.laplateforme.io/intercept.php --header 'Content-Type : multipart/form-data' --form challenge=$challenge --form userurl=$userurl --form username=$username --form password=$password --form button=Authentication -location https://alcasar.laplateforme.io
